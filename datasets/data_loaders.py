@@ -2,6 +2,7 @@ import torch
 from .mnist import MNISTDataset
 from .power import PowerDataset
 from .hepmass import HEPMassDataset
+from .chad import ChadDataset
 
 
 def get_data(dataset: str):
@@ -10,6 +11,8 @@ def get_data(dataset: str):
         return MNISTDataset(logit=True, dequantize=True)
     if dataset == "power":
         return PowerDataset()
+    if dataset == "chad":
+        return ChadDataset()
     if dataset == "hepmass":
         return HEPMassDataset()
 
